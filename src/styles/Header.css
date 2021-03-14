@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap");
+
+.header-component {
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px solid rgba(167, 167, 167, 0.4);
+  display: flex;
+  flex-direction: row;
+}
+
+.header__left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__left > h1 {
+  color: white;
+}
+
+.header__right {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown > button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "Domine", serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #abb8c3;
+  cursor: pointer;
+  padding: 0 10px;
+  min-height: 50px;
+}
+
+.dropdown > button:hover {
+  border-bottom: 2px solid #0693e3;
+  color: white;
+}
+
+.dropdown__content {
+  min-width: 150px;
+  min-height: 50px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+}
+
+.dropdown__content > p {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+.header__search {
+  display: flex;
+  flex-direction: row;
+}
