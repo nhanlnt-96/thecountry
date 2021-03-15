@@ -1,9 +1,9 @@
-import React from 'react';
-import { TextField } from '@material-ui/core';
+import React, {useState} from 'react';
 
 import '../styles/Header.css';
 
 const Header = () => {
+
     return (
         <div className="header-component">
             <div className="header__left">
@@ -13,7 +13,7 @@ const Header = () => {
             <div className="header__right">
                 <div className="dropdown">
                     <button>Movies</button>
-                    <div className="dropdown__content">
+                    <div className="dropdown__menu">
                         <p>Popular</p>
                         <p>Now Playing</p>
                         <p>Upcoming</p>
@@ -23,7 +23,7 @@ const Header = () => {
 
                 <div className="dropdown">
                     <button>TV Shows</button>
-                    <div className="dropdown__content">
+                    <div className="dropdown__menu">
                         <p>Popular</p>
                         <p>Airing Today</p>
                         <p>On TV</p>
@@ -33,19 +33,9 @@ const Header = () => {
 
                 <div className="dropdown">
                     <button>People</button>
-                    <div className="dropdown__content">
+                    <div className="dropdown__menu">
                         <p>Popular People</p>
                     </div>
-                </div>
-
-                <div className="header__search">
-                    <TextField
-                        style={{ width: "300px" }}
-                        color="#abb8c3"
-                        label="Search for a movie, tv show, person..." />
-                    <button>
-                        tim
-                    </button>
                 </div>
             </div>
         </div>
