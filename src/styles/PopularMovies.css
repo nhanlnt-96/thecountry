@@ -1,0 +1,9 @@
+.popular-movies {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.popular-movies > h1 {
+    color: white;
+    margin-bottom: 0px;
+}
