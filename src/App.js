@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from './components/Header';
-import bg from './asset/img/bg.jpg';
+import Country from "./features/Country/Country";
 
 import './styles/App.css';
-import Country from "./features/Country/Country";
+import 'antd/dist/antd.css';
+import Sidebar from "./components/Sidebar";
 
 function App() {
     return (
@@ -11,7 +12,14 @@ function App() {
             <div className="header">
                 <Header/>
             </div>
-            <Country/>
+
+            <div className="sidebar">
+                <Sidebar/>
+            </div>
+
+            <div className="container">
+                <Country/>
+            </div>
         </div>
     );
 }
