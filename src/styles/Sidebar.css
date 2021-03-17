@@ -1,0 +1,32 @@
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: none !important;
+}
+
+.ant-spin {
+  width: 285px;
+  height: 93vh;
+  margin-top: 10px !important;
+}
+
+.sidebar__top {
+  width: 285px;
+  top: 70px;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.sidebar__bottom {
+  margin-top: 120px;
+  height: 88vh;
+  overflow: scroll;
+}
+
+.sidebar__bottom::-webkit-scrollbar {
+  display: none;
+}

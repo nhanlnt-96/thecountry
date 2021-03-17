@@ -14,7 +14,7 @@ const port = 4000;
 //set origin
 app.use(cors(corsOptions));
 
-//country
+//all-countries
 app.get('/api/v1/all-countries', async (req, res) => {
     try {
         const data = await axios.get('https://restcountries.eu/rest/v2/all');

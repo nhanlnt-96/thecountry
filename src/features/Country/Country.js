@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {allCountry} from "../../services";
+import React from 'react';
+
 import '../../styles/Country.css';
 
 const Country = () => {
