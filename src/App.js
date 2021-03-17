@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
-import {Popular} from './features/movies';
+import bg from './asset/img/bg.jpg';
 
 import './styles/App.css';
+import Country from "./features/Country/Country";
 
 function App() {
     return (
@@ -10,9 +11,7 @@ function App() {
             <div className="header">
                 <Header/>
             </div>
-            <div className="container">
-                <Popular/>
-            </div>
+            <Country/>
         </div>
     );
 }
