@@ -5,7 +5,7 @@
     height: 70px;
     display: flex;
     flex-direction: row;
-    background-color: rgba(225, 225, 225, 0.6);
+    background-color: black;
     font-family: "Rakkas", cursive;
     position: fixed;
     top: 0;
@@ -19,10 +19,12 @@
 }
 
 .header__left > h1 {
+    margin-bottom: 0px;
     color: black;
     letter-spacing: 5px;
     cursor: pointer;
     font-size: 40px;
+    color: white;
 }
 
 .header__right {
@@ -35,6 +37,7 @@
 
 .header__right > h3 {
     margin-right: 30px;
+    color: white;
 }
 
 .header__search {
