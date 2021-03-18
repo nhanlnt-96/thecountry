@@ -28,14 +28,14 @@ const Sidebar = () => {
     return (
         <div className="sidebar-component">
             <div className="sidebar__top">
-                <Search placeholder="Enter country name..." style={{ width: 250 }} />
+                <Search placeholder="Enter country name..." style={{ width: "90%" }} />
             </div>
 
             <div className="sidebar__bottom">
                 <Menu style={{ "backgroundColor": "transparent" }}>
                     {isBusy ? <Spin tip="Loading..." /> : country.map((val) => {
                         return (
-                            <Menu.Item key={val.callingCodes}>{val.name}</Menu.Item>
+                            <Menu.Item key={val.name}>{val.name}</Menu.Item>
                         )
                     })}
                 </Menu>
