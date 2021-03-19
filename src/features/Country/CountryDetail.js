@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../styles/Country.css';
 
-const Country = () => {
+const CountryDetail = () => {
     return (
         <div className="country-component">
             <h1>All Country</h1>
@@ -10,4 +10,4 @@ const Country = () => {
     );
 }
 
-export default Country;
+export default CountryDetail;

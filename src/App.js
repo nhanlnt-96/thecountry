@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
-import Country from "./features/Country/Country";
 import Sidebar from "./components/Sidebar";
+import CountryDetail from './features/Country/CountryDetail';
 
 import './styles/App.css';
 import 'antd/dist/antd.css';
@@ -18,7 +18,7 @@ function App() {
                     <Sidebar/>
                 </div>
                 <div className="content">
-                    <Country/>
+                    <CountryDetail/>
                 </div>
             </div>
         </div>

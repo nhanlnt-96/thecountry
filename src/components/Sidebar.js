@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, Spin, Input } from 'antd';
+import { Menu, Spin } from 'antd';
 import { allCountry } from "../services";
+import CountryNameInput from '../features/Country/CountryNameInput';
 
 import '../styles/Sidebar.css';
 
@@ -23,12 +24,12 @@ const Sidebar = () => {
         }
     };
 
-    const {Search}=Input;
+    const { Search } = Input;
 
     return (
         <div className="sidebar-component">
             <div className="sidebar__top">
-                <Search placeholder="Enter country name..." style={{ width: "90%" }} />
+                <CountryNameInput />
             </div>
 
             <div className="sidebar__bottom">
