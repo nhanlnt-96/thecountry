@@ -5,4 +5,6 @@ export const getAllCountry = (country) => {
         type: GET_ALL_COUNTRY,
         data: country
     }
-}
+};
+
+export findCountryName=(countryName)

@@ -24,16 +24,5 @@ app.get('/api/v1/all-countries', async (req, res) => {
     }
 });
 
-//search-country
-app.get('api/v1/search/', async (req, res) => {
-    try {
-        const countryNameResult = axios.get(`https://restcountries.eu/rest/v2/name/${req.query.countryName}`);
-        console.log(countryNameResult.data);
-        res.send(countryNameResult.data);
-    } catch (error) {
-        console.log(error);
-    }
-});
-
 app.listen(port);
 console.log(`Connect to port ${port} success`);
