@@ -1,5 +1,10 @@
-import {allCountry} from "../../../services";
+import { allCountry } from '../../../services';
 
 export const requestGetCountry = async () => {
-    return await allCountry();
+  try {
+    const countryData = await allCountry();
+    return countryData;
+  } catch (error) {
+    console.log(error);
+  }
 }
