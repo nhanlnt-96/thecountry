@@ -5,12 +5,12 @@ import App from './App';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import rootReducer from './redux/rootReducer';
-import { watcherSaga } from './redux/sagas/rootSaga';
+import rootReducer from './store/rootReducer';
+import rootSaga from './store/sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = compose(applyMiddleware(sagaMiddleware), window.devToolsExtension && window.devToolsExtension())(createStore)(rootReducer);
-sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <React.StrictMode>

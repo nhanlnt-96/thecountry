@@ -1,5 +1,7 @@
-import { allCountry } from '../../../services';
+import { allCountry } from '../../../network';
 
+
+//get all country
 export const requestGetCountry = async () => {
   try {
     const countryData = await allCountry();

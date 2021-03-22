@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import CountryDetail from './features/Country/CountryDetail';
+import CountryDetail from './container/Country/CountryDetail';
 
 import './styles/App.css';
 import 'antd/dist/antd.css';
