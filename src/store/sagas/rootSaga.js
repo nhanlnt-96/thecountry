@@ -1,6 +1,8 @@
-import { spawn } from 'redux-saga/effects';
-import { watcherSaga } from './watcher/watcherSaga';
+import { takeEvery} from 'redux-saga/effects';
+import {GET_ALL_COUNTRY} from "../country/actionType";
+import {handlerGetCountry} from "./handlers/countryHandler";
 
-export default function* rootSaga() {
-  yield spawn(watcherSaga)
-};
+
+export function* watcherSaga() {
+  yield takeEvery(GET_ALL_COUNTRY, handlerGetCountry);
+}

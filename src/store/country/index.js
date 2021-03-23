@@ -11,16 +11,15 @@ const countryReducer = (state = countryInitState, action) => {
       return {
         ...state,
         country: action.data,
-        loading: false
       }
     case SEARCH_COUNTRY_NAME:
-      const countryNameResult = state.country.filter(val => {
+      const countryNameResult = state.country.find(val => {
         if (val.name === action.data.countryName) {
           return {
             ...val
           }
         }
-        return console.log(state.country);
+        return val;
       });
       return {
         ...state,

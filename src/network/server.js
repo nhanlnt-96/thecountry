@@ -15,7 +15,7 @@ const port = 4000;
 app.use(cors(corsOptions));
 
 //get-all-countries
-app.get('/api/v1/all-countries', async (req, res) => {
+app.get('/api/v1/search/all', async (req, res) => {
     try {
         const data = await axios.get('https://restcountries.eu/rest/v2/all');
         res.send(data.data);
@@ -23,6 +23,17 @@ app.get('/api/v1/all-countries', async (req, res) => {
         console.log(error);
     }
 });
+
+//get-country-by-name
+app.get('/api/v1/search/', async (req, res) => {
+    try {
+        const data = await axios.get(`https://restcountries.eu/rest/v2/name/${req.query.countryName}`);
+        console.log(data.data);
+        res.send(data.data);
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 app.listen(port);
 console.log(`Connect to port ${port} success`);
