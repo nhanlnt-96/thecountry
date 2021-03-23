@@ -12,6 +12,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = compose(applyMiddleware(sagaMiddleware), window.devToolsExtension && window.devToolsExtension())(createStore)(rootReducer);
 sagaMiddleware.run(watcherSaga);
 
+
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>

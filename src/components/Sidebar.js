@@ -12,12 +12,12 @@ const Sidebar = () => {
 
     const onSearchBtnClick = (countryNameInput) => {
         dispatch(searchCountryName(countryNameInput));
-        console.log(countryNameInput);
-    }
+    };
 
     useEffect(() => {
         dispatch(getAllCountry());
     }, []);
+
 
     return (
         <div className="sidebar-component">
@@ -35,6 +35,7 @@ const Sidebar = () => {
                         )
                     })}
                 </Menu>
+                {console.log(country)}
             </div>
         </div>
     );
