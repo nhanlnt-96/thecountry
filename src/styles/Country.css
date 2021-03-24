@@ -1,1 +1,11 @@
+.country-component, .country__detail__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.country__detail__container {
+    flex-direction: column;
+}
