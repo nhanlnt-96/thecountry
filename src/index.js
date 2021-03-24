@@ -6,11 +6,11 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import {Provider} from 'react-redux';
 import rootReducer from './store/rootReducer';
-import {watcherSaga} from "./store/sagas/rootSaga";
+import {countryHandler} from "./store/sagas/handlers/countryHandler";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = compose(applyMiddleware(sagaMiddleware), window.devToolsExtension && window.devToolsExtension())(createStore)(rootReducer);
-sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(countryHandler);
 
 
 ReactDOM.render(

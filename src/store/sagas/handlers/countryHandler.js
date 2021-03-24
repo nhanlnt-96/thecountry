@@ -1,23 +1,7 @@
-import {call, put} from 'redux-saga/effects';
-import {requestGetCountry, requestSearchCountry} from '../requests/countryRequest';
-import {getAllCountry, searchCountryName} from '../../country/actions';
+import {takeLatest} from 'redux-saga/effects';
+import {GET_COUNTRY_LOAD} from "../../country/actionType";
+import {countryRequest} from "../requests/countryRequest";
 
-//get country
-export function* handlerGetCountry(action) {
-    try {
-        const response = yield call(requestGetCountry);
-        yield put(getAllCountry(response.data));
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-//search country
-export function* handlerSearchCountry(action) {
-    try {
-        const response = yield call(requestSearchCountry);
-        yield put(searchCountryName(response.name));
-    } catch (error) {
-        console.log(error);
-    }
+export function* countryHandler() {
+    yield takeLatest(GET_COUNTRY_LOAD, countryRequest);
 }

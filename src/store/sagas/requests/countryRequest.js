@@ -1,22 +1,12 @@
-import {allCountry, searchCountry} from '../../../network';
+import {call, put} from 'redux-saga/effects';
+import {allCountry} from "../../../network";
+import {getCountryFail, getCountryReceive} from "../../country/actions";
 
-
-//get all country
-export const requestGetCountry = async () => {
+export function* countryRequest() {
     try {
-        const countryData = await allCountry();
-        return countryData;
+        const response = yield call(allCountry);
+        yield put(getCountryReceive(response.data));
     } catch (error) {
-        console.log(error);
+        yield put(getCountryFail(error));
     }
-}
-
-//search country name
-export const requestSearchCountry = async (countryName) => {
-    try {
-        const countryResult = await searchCountry(countryName);
-        return countryResult;
-    } catch (error) {
-        console.log(error);
-    }
-}
+};

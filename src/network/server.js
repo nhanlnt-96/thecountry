@@ -24,16 +24,5 @@ app.get('/api/v1/search/all', async (req, res) => {
     }
 });
 
-//get-country-by-name
-app.get('/api/v1/search/', async (req, res) => {
-    try {
-        const data = await axios.get(`https://restcountries.eu/rest/v2/name/${req.query.countryName}`);
-        console.log(data.data);
-        res.send(data.data);
-    } catch (error) {
-        console.log(error);
-    }
-})
-
 app.listen(port);
 console.log(`Connect to port ${port} success`);

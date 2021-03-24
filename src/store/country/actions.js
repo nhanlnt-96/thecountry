@@ -1,17 +1,25 @@
-import {GET_ALL_COUNTRY, SEARCH_COUNTRY_NAME} from './actionType';
+import {
+    GET_COUNTRY_FAIL,
+    GET_COUNTRY_LOAD,
+    GET_COUNTRY_RECEIVE
+} from "./actionType";
 
-export const getAllCountry = (country) => {
+export const getCountryLoad = () => {
     return {
-        type: GET_ALL_COUNTRY,
-        data: country
+        type: GET_COUNTRY_LOAD
     }
 };
 
-export const searchCountryName = (countryName) => {
+export const getCountryReceive = (countryData) => {
     return {
-        type: SEARCH_COUNTRY_NAME,
-        data: {
-            countryName
-        }
+        type: GET_COUNTRY_RECEIVE,
+        payload: countryData
     }
-}
+};
+
+export const getCountryFail = (error) => {
+    return {
+        type: GET_COUNTRY_FAIL,
+        payload: error
+    }
+};

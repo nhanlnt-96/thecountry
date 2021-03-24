@@ -1,41 +1,43 @@
 import React, {useEffect, useState} from 'react';
-import {Menu, Spin} from 'antd';
+import {Input, Menu, Spin} from 'antd';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllCountry, searchCountryName} from '../store/country/actions';
+import {getCountryLoad} from '../store/country/actions';
 
 import '../styles/Sidebar.css';
 
 const Sidebar = () => {
-    const country = useSelector(state => state.countryReducer.country);
+    const state = useSelector(state => ({...state.countriesData}));
     const dispatch = useDispatch();
     const [countryNameInput, setCountryNameInput] = useState('');
 
-    const onSearchBtnClick = (countryNameInput) => {
-        dispatch(searchCountryName(countryNameInput));
-    };
-
     useEffect(() => {
-        dispatch(getAllCountry());
-    }, []);
-
+        dispatch(getCountryLoad());
+    }, [dispatch]);
 
     return (
         <div className="sidebar-component">
             <div className="sidebar__top">
-                <input type="text" value={countryNameInput} placeholder="enter country name..."
-                       onChange={(e) => setCountryNameInput(e.target.value)}/>
-                <button onClick={() => onSearchBtnClick(countryNameInput)}>Search</button>
+                <Input
+                    style={{width: "95%"}}
+                    type="text"
+                    value={countryNameInput}
+                    placeholder="enter country name..."
+                    onChange={(e) => setCountryNameInput(e.target.value)}/>
             </div>
-
             <div className="sidebar__bottom">
                 <Menu style={{'backgroundColor': 'transparent'}}>
-                    {country && country.map((val) => {
+                    {state.loading ? <Spin/> : state.countries.filter((val) => {
+                        if (countryNameInput === '') {
+                            return val;
+                        } else if (val.name.toLowerCase().includes(countryNameInput.toLowerCase())) {
+                            return val;
+                        }
+                    },{}).map((val) => {
                         return (
                             <Menu.Item key={val.name}>{val.name}</Menu.Item>
                         )
                     })}
                 </Menu>
-                {console.log(country)}
             </div>
         </div>
     );
