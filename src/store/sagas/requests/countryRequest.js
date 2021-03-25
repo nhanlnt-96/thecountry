@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
 import {allCountry} from "../../../network";
-import {getCountryFail, getCountryReceive} from "../../country/actions";
+import {getCountryFail, getCountryReceive} from "../../getCountry/actions";
 
 export function* countryRequest() {
     try {

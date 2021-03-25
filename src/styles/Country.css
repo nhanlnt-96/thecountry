@@ -9,3 +9,34 @@
 .country__detail__container {
     flex-direction: column;
 }
+
+/*.MuiPaper-root {*/
+/*    background-color: transparent !important;*/
+/*}*/
+
+.MuiGrid-spacing-xs-3 {
+    width: 0 !important;
+    margin: 0 !important;
+}
+
+.MuiGrid-container {
+    width: 100% !important;
+    height: 100%;
+    align-items: center;
+}
+
+/*.MuiPaper-elevation1 {*/
+/*    box-shadow: none !important;*/
+/*}*/
+
+.country__detail__paper {
+    padding: 10px;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+}
+
+.country__detail__paper > img {
+    width: 100%;
+}
+

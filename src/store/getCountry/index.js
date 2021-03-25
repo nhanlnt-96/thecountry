@@ -1,9 +1,8 @@
-import { GET_COUNTRY_DETAIL, GET_COUNTRY_FAIL, GET_COUNTRY_LOAD, GET_COUNTRY_RECEIVE } from './actionType';
+import { GET_COUNTRY_FAIL, GET_COUNTRY_LOAD, GET_COUNTRY_RECEIVE } from './actionType';
 
 const countryInitState = {
   loading: false,
   countries: [],
-  countryDetail: {},
   error: null
 };
 
@@ -26,12 +25,6 @@ const countryReducer = (state = countryInitState, action) => {
         loading: false,
         error: action.payload
       };
-    case GET_COUNTRY_DETAIL:
-      return {
-        ...state,
-        loading: false,
-        countryDetail: action.payload
-      }
     default:
       return state;
   }

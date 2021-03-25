@@ -1,5 +1,5 @@
 import {takeLatest} from 'redux-saga/effects';
-import {GET_COUNTRY_LOAD} from "../../country/actionType";
+import {GET_COUNTRY_LOAD} from "../../getCountry/actionType";
 import {countryRequest} from "../requests/countryRequest";
 
 export function* countryHandler() {

@@ -1,5 +1,4 @@
 import {
-  GET_COUNTRY_DETAIL,
   GET_COUNTRY_FAIL,
   GET_COUNTRY_LOAD,
   GET_COUNTRY_RECEIVE
@@ -24,10 +23,3 @@ export const getCountryFail = (error) => {
     payload: error
   }
 };
-
-export const getCountryDetail = (countryDetail) => {
-  return {
-    type: GET_COUNTRY_DETAIL,
-    payload: countryDetail
-  }
-}
