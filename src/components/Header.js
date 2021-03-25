@@ -10,7 +10,8 @@ const Header = () => {
             </div>
 
             <div className="header__right">
-                <h3>About</h3>
+                <p>Source: https://restcountries.eu/</p>
+                <p>Current version: 2.0.5</p>
             </div>
         </div>
     )

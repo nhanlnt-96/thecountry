@@ -1,50 +1,67 @@
 import React from 'react';
-import {useSelector} from "react-redux";
-import {makeStyles} from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
-const useStyles = makeStyles({
-    table: {
-        width: "100%",
-    },
-});
-
+import { useSelector } from 'react-redux';
 
 export default function TableNameCountry() {
-    const state = useSelector(state => ({...state.countriesDetailData}));
+  const state = useSelector(state => state.countriesData.countryDetail);
 
-    console.log(state)
-
-    const classes = useStyles();
-    return (
-        <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
-
-                {state.countryDetail &&
-                (
-                    <TableBody>
-                        <TableRow key={state.countryDetail.name}>
-                            <TableCell component="th" scope="row">
-                                Native Name
-                            </TableCell>
-                            <TableCell align="right">{state.countryDetail.name}</TableCell>
-                        </TableRow>
-                        <TableRow key={state.countryDetail.name}>
-                            <TableCell component="th" scope="row">
-                                Alternative spellings
-                            </TableCell>
-                            {state.countryDetail.altSpellings &&
-                            <TableCell align="right">{state.countryDetail.altSpellings.join(', ')}</TableCell>
-                            }
-                        </TableRow>
-                    </TableBody>
-                )}
-            </Table>
-        </TableContainer>
-    );
+  return (
+    <div className="table-name-component">
+      <h3>Names</h3>
+      <table>
+        <tbody>
+        <tr>
+          <td className="row__title">Native Name</td>
+          <td>{state.nativeName}</td>
+        </tr>
+        <tr>
+          <td className="row__title">Alternative spellings</td>
+          <td>{state.altSpellings.join(', ')}</td>
+        </tr>
+        <tr>
+          <td colSpan={2} className="row__title">Translations</td>
+        </tr>
+        <tr>
+          <td className="row__title">de</td>
+          <td>{state.translations.de}</td>
+        </tr>
+        <tr>
+          <td className="row__title">es</td>
+          <td>{state.translations.es}</td>
+        </tr>
+        <tr>
+          <td className="row__title">fr</td>
+          <td>{state.translations.fr}</td>
+        </tr>
+        <tr>
+          <td className="row__title">ja</td>
+          <td>{state.translations.ja}</td>
+        </tr>
+        <tr>
+          <td className="row__title">it</td>
+          <td>{state.translations.it}</td>
+        </tr>
+        <tr>
+          <td className="row__title">br</td>
+          <td>{state.translations.br}</td>
+        </tr>
+        <tr>
+          <td className="row__title">pt</td>
+          <td>{state.translations.pt}</td>
+        </tr>
+        <tr>
+          <td className="row__title">nl</td>
+          <td>{state.translations.nl}</td>
+        </tr>
+        <tr>
+          <td className="row__title">hr</td>
+          <td>{state.translations.hr}</td>
+        </tr>
+        <tr>
+          <td className="row__title">fa</td>
+          <td>{state.translations.fa}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }
