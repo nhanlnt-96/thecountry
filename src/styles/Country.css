@@ -6,8 +6,12 @@
     align-items: center;
 }
 
-.country-component{
+.country-component {
     overflow: scroll;
+}
+
+.country-component::-webkit-scrollbar {
+    display: none;
 }
 
 .country__detail__container {
