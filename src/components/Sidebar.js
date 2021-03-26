@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Menu, Spin} from 'antd';
 import TextField from '@material-ui/core/TextField';
 import {useDispatch, useSelector} from 'react-redux';
-import { getCountryDetail, getCountryLoad } from '../store/getCountry/actions';
+import {getCountryDetail, getCountryLoad} from '../store/getCountry/actions';
 
 import '../styles/Sidebar.css';
 
