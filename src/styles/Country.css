@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.country-component{
+    overflow: scroll;
+}
+
 .country__detail__container {
     flex-direction: column;
 }
@@ -25,7 +29,6 @@
     padding: 10px;
     text-align: center;
     color: black;
-    background-color: transparent;
 }
 
 .country__detail__paper > img {
